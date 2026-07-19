@@ -1,0 +1,11 @@
+{
+  "name": "eu-vat-normalize",
+  "version": "1.0.0",
+  "description": "Normalize and format-validate EU VAT identifiers. All 27 member states + XI.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": { "test": "node test.js" },
+  "license": "MIT",
+  "author": "Tarek Etman (MaatData)",
+  "keywords": ["vat", "vies", "eu", "validation", "normalization"]
+}
