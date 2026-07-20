@@ -1,37 +1,45 @@
 <p align="center">
-  <img src="brand/maat_avatar.png" width="150" alt="The Ma'at feather">
+  <img src="brand/lockup-light.svg" width="520" alt="APIxyz">
 </p>
 
-<h1 align="center">Ma'at Data</h1>
-
-<p align="center">Company data verified against the EU's official VAT registry.<br>Runs finish even when sources fail. Pay per result.</p>
+<p align="center"><em>Public web data, from A to Z.</em></p>
 
 ---
 
-Ma'at is the Egyptian principle of truth, weighed against a feather. The products carry the name because every record they return states its source. A registered company name in our output is labeled `verificationSource: "VIES"` when it comes from VIES, the European Commission's VAT registry. A field read from a company website carries a lower confidence score, and the record says so.
+APIxyz publishes public web data actors, for people and for AI agents, that read only what a logged-out browser can already see, price per result, and document every field they return.
 
-The products are paid tools on the [Apify platform](https://apify.com/maatdata) under the handle `maatdata`. A buyer runs them from the Apify console or by API call. The same listings are exposed to AI agents through Apify's MCP integration.
+## The line
 
-## Live products
+| Source | Actor | Price |
+|---|---|---|
+| LinkedIn | Jobs Scraper | $2 / 1k jobs |
+| LinkedIn | Company Jobs Monitor | $3 / 1k postings |
+| LinkedIn | Jobs by Location | $2 / 1k jobs |
+| LinkedIn | Hiring Signals | $4 / 1k signals |
+| LinkedIn | Job Market Snapshot | $3 / 1k rows |
+| Instagram | Profile Scraper | $1 / 1k profiles |
+| European registries | VAT Status Monitor | $5 / 1k checks |
+| European registries | Company Change Monitor | $5 / 1k companies |
+| European registries | Company Enrichment, VAT Verified | $3 / 1k records |
+| European registries | New Registrations Feed | $4 / 1k records |
+| Google Maps | Lead Scraper | $2 / 1k places |
+| Google Ads | Transparency Scraper | $5 / 1k ads |
+| X | Ads Repository Downloader | $3 / 1k ads |
+| The open web | Content Crawler for Agents | $1.50 / 1k pages |
+| European registries | DSA Ad Library | $5 / 1k ads |
 
-[**EU Company Enrichment with Official VAT Verification**](https://apify.com/maatdata/eu-company-enrichment-vat-verified)
-VAT numbers or company domains in, verified company records out. The registered name and address come from VIES. Given only a domain, the tool reads the company's imprint or legal page, finds the VAT number there, and verifies it. Optional website firmographics add the company description, social links, public emails found on the site, and technology hints. In live testing, a French registry outage mid-run produced `MS_UNAVAILABLE` rows while the remaining countries verified normally. A 500-row CRM cleanup with the website add-on costs $9.01.
+## Standard
 
-[**EU VAT Status Monitor**](https://apify.com/maatdata/eu-vat-status-monitor)
-A scheduled watchdog for a supplier list. It stores each company's registry state in your Apify account and reports only the rows that changed since the last run, such as `BECAME_INVALID` or `ADDRESS_CHANGED`. A webhook fires when a watched VAT number goes invalid, in a format Zapier, Make, n8n, and Slack accept. A registry outage never destroys stored state.
+Every actor reads pages a browser reaches without an account. No stored session at any point, on any source. That posture is the one that held in hiQ Labs v. LinkedIn and in Meta v. Bright Data.
 
-Buyer guides with worked pricing examples are at [maatdata docs](https://tareketman.github.io/maatdata-docs/).
+Every actor clears a default-input run before it is queued, which is the check the platform runs automatically. Every actor ships an output schema with typed fields and is callable as an MCP tool.
 
-## Inside this repository
+Pricing is per result returned. Runs that return no rows are not charged.
 
-This repository is the public engineering face of the company. Product source stays closed.
+## Arithmetic
 
-| Path | What it covers |
-|---|---|
-| [ENGINEERING.md](ENGINEERING.md) | Architecture principles. Failure modes returned as data, the reusable state-diff monitor engine, registry grounding, publish-as-code. |
-| [AI-OPERATIONS.md](AI-OPERATIONS.md) | The production methodology. One human directs two frontier-model AI agents under written quality contracts. |
-| [packages/eu-vat-normalize](packages/eu-vat-normalize) | Open-source EU VAT number normalizer and format validator covering all 27 member states plus the XI prefix. MIT licensed. |
+Google Places Text Search Pro lists at $32 per 1,000 lookups. The Maps lead actor charges $2 per 1,000.
 
-## Operator
+---
 
-Tarek Etman ([tarekandnati@gmail.com](mailto:tarekandnati@gmail.com)). One-person company. Two AI agents build and research under written specifications, and a human reviews everything that ships. AI-OPERATIONS.md documents the setup.
+<p align="center"><a href="https://apify.com/apixyz">Store</a> · <a href="https://tareketman.github.io/apixyz-docs">Documentation</a></p>

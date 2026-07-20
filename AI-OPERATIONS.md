@@ -1,6 +1,7 @@
+<!-- STYLE AUDIT: passed 2026-07-20 against STYLE.md (APIxyz rebrand naming pass, shipped/015-BRAND-FINISH) -->
 # AI operations: a two-agent production system
 
-MaatData is built and operated by one human directing two frontier-model AI agents under written contracts. This document describes the methodology, because the methodology is the part most teams get wrong.
+APIxyz is built and operated by one human directing two frontier-model AI agents under written contracts. This document describes the methodology, because the methodology is the part most teams get wrong.
 
 ## Roles
 

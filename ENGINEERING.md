@@ -1,10 +1,11 @@
+<!-- STYLE AUDIT: passed 2026-07-20 against STYLE.md (APIxyz rebrand naming pass, shipped/015-BRAND-FINISH) -->
 # Engineering notes
 
-Principles behind the MaatData actors. Written for engineers evaluating how we build; product source stays closed.
+Principles behind the APIxyz actors. Written for engineers evaluating how we build; product source stays closed.
 
 ## Failure modes are data
 
-Every row a MaatData actor processes returns a record, including the failures. An unreachable registry becomes `MS_UNAVAILABLE` on an otherwise well-formed row. A malformed VAT number becomes `NO_VAT_OR_DOMAIN`. The run always finishes, and consumers filter by status code.
+Every row a APIxyz actor processes returns a record, including the failures. An unreachable registry becomes `MS_UNAVAILABLE` on an otherwise well-formed row. A malformed VAT number becomes `NO_VAT_OR_DOMAIN`. The run always finishes, and consumers filter by status code.
 
 This came from watching competitor tools abort 18% of their runs. An abort throws away the 82% of work already done. A status code preserves it.
 
