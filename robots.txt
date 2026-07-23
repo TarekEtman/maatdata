@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tareketman.github.io/APIxyz/sitemap.xml
